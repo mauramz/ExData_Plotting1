@@ -1,6 +1,6 @@
 library("data.table")
 
-setwd("~/Desktop/datasciencecoursera/4_Exploratory_Data_Analysis/project/data")
+setwd("/Users/mauramz/JHU/ExploratoryDataAnalysis/CourseProject1/ExData_Plotting1")
 
 #Reads in data from file then subsets data for specified dates
 powerDT <- data.table::fread(input = "household_power_consumption.txt"
@@ -16,7 +16,7 @@ powerDT[, dateTime := as.POSIXct(paste(Date, Time), format = "%d/%m/%Y %H:%M:%S"
 # Filter Dates for 2007-02-01 and 2007-02-02
 powerDT <- powerDT[(dateTime >= "2007-02-01") & (dateTime < "2007-02-03")]
 
-png("plot4.png", width=480, height=480)
+png("Plot_4.png", width=480, height=480)
 
 par(mfrow=c(2,2))
 
